@@ -25,6 +25,7 @@ from django.test.utils import teardown_test_environment
 
 from lettuce import Runner
 from lettuce import registry
+from lettuce.core import SummaryTotalResults
 
 from lettuce.django import harvest_lettuces, get_server
 from lettuce.django.server import LettuceServerException
@@ -48,6 +49,9 @@ class Command(BaseCommand):
 
         make_option('-S', '--no-server', action='store_true', dest='no_server', default=False,
             help="will not run django's builtin HTTP server"),
+            
+        make_option('--nothreading', action='store_false', dest='use_threading', default=True,
+            help='Tells Django to NOT use threading.'),
 
         make_option('-T', '--test-server', action='store_true', dest='test_database',
             default=getattr(settings, "LETTUCE_USE_TEST_DATABASE", False),
@@ -98,6 +102,7 @@ class Command(BaseCommand):
 
         make_option("--pdb", dest="auto_pdb", default=False,
                     action="store_true", help='Launches an interactive debugger upon error'),
+
     )
 
     def stopserver(self, failed=False):
@@ -128,6 +133,8 @@ class Command(BaseCommand):
         tags = options.get('tags', None)
         failfast = options.get('failfast', False)
         auto_pdb = options.get('auto_pdb', False)
+        threading = options.get('use_threading', True)
+        with_summary = options.get('summary_display', False)
 
         if test_database:
             migrate_south = getattr(settings, "SOUTH_TESTS_MIGRATE", True)
@@ -150,7 +157,7 @@ class Command(BaseCommand):
         settings.DEBUG = options.get('debug', False)
 
         paths = self.get_paths(args, apps_to_run, apps_to_avoid)
-        server = get_server(port=options['port'])
+        server = get_server(port=options['port'], threading=threading)
 
         if run_server:
             try:
@@ -198,7 +205,9 @@ class Command(BaseCommand):
             traceback.print_exc(e)
 
         finally:
-            registry.call_hook('after', 'harvest', results)
+            summary = SummaryTotalResults(results)
+            summary.summarize_all()
+            registry.call_hook('after', 'harvest', summary)
 
             if test_database:
                 self._testrunner.teardown_databases(self._old_db_config)
