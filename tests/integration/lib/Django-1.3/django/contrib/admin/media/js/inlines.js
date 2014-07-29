@@ -123,7 +123,7 @@
 	}
 	/* Setup plugin defaults */
 	$.fn.formset.defaults = {
-		prefix: "form",					// The form prefix for your django formset
+		prefix: "form",					// The form prefix for your django_lettuce formset
 		addText: "add another",			// Text for the add link
 		deleteText: "remove",			// Text for the delete link
 		addCssClass: "add-row",			// CSS class applied to the add link

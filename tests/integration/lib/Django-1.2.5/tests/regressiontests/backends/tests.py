@@ -155,7 +155,7 @@ class BackendTestCase(TestCase):
 # * if sqlite3 (if/once we get #14204 fixed) has referential integrity turned
 #   on or not, something that would be controlled by runtime support and user
 #   preference.
-# verify if its type is django.database.db.IntegrityError.
+# verify if its type is django_lettuce.database.db.IntegrityError.
 
 class FkConstraintsTests(TransactionTestCase):
 

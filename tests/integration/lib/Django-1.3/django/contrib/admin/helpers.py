@@ -86,7 +86,7 @@ class Fieldset(object):
 
 class Fieldline(object):
     def __init__(self, form, field, readonly_fields=None, model_admin=None):
-        self.form = form # A django.forms.Form instance
+        self.form = form # A django_lettuce.forms.Form instance
         if not hasattr(field, "__iter__"):
             self.fields = [field]
         else:
@@ -109,7 +109,7 @@ class Fieldline(object):
 
 class AdminField(object):
     def __init__(self, form, field, is_first):
-        self.field = form[field] # A django.forms.BoundField instance
+        self.field = form[field] # A django_lettuce.forms.BoundField instance
         self.is_first = is_first # Whether this field is first on the line
         self.is_checkbox = isinstance(self.field.field.widget, forms.CheckboxInput)
 

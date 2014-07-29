@@ -773,10 +773,10 @@ class DecimalField(Field):
         Formats a number into a string with the requisite number of digits and
         decimal places.
         """
-        # Method moved to django.db.backends.util.
+        # Method moved to django_lettuce.db.backends.util.
         #
         # It is preserved because it is used by the oracle backend
-        # (django.db.backends.oracle.query), and also for
+        # (django_lettuce.db.backends.oracle.query), and also for
         # backwards-compatibility with any external code which may have used
         # this method.
         from django.db.backends import util

@@ -20,30 +20,30 @@ def fully_decorated(request):
     return HttpResponse('<html><body>dummy</body></html>')
 fully_decorated.anything = "Expected __dict__"
 
-# django.views.decorators.http
+# django_lettuce.views.decorators.http
 fully_decorated = require_http_methods(["GET"])(fully_decorated)
 fully_decorated = require_GET(fully_decorated)
 fully_decorated = require_POST(fully_decorated)
 
-# django.views.decorators.vary
+# django_lettuce.views.decorators.vary
 fully_decorated = vary_on_headers('Accept-language')(fully_decorated)
 fully_decorated = vary_on_cookie(fully_decorated)
 
-# django.views.decorators.cache
+# django_lettuce.views.decorators.cache
 fully_decorated = cache_page(60*15)(fully_decorated)
 fully_decorated = cache_control(private=True)(fully_decorated)
 fully_decorated = never_cache(fully_decorated)
 
-# django.contrib.auth.decorators
+# django_lettuce.contrib.auth.decorators
 # Apply user_passes_test twice to check #9474
 fully_decorated = user_passes_test(lambda u:True)(fully_decorated)
 fully_decorated = login_required(fully_decorated)
 fully_decorated = permission_required('change_world')(fully_decorated)
 
-# django.contrib.admin.views.decorators
+# django_lettuce.contrib.admin.views.decorators
 fully_decorated = staff_member_required(fully_decorated)
 
-# django.utils.functional
+# django_lettuce.utils.functional
 fully_decorated = memoize(fully_decorated, {}, 1)
 fully_decorated = allow_lazy(fully_decorated)
 fully_decorated = lazy(fully_decorated)

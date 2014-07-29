@@ -99,7 +99,7 @@ class Settings(BaseSettings):
                     setting_value = (setting_value,) # In case the user forgot the comma.
                 setattr(self, setting, setting_value)
 
-        # Expand entries in INSTALLED_APPS like "django.contrib.*" to a list
+        # Expand entries in INSTALLED_APPS like "django_lettuce.contrib.*" to a list
         # of all those apps.
         new_installed_apps = []
         for app in self.INSTALLED_APPS:

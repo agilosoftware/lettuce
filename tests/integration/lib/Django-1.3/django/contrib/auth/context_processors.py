@@ -42,7 +42,7 @@ def auth(request):
     # processor, which can easily be every request on a site if
     # TEMPLATE_CONTEXT_PROCESSORS has this context processor added.  This kills
     # the ability to cache.  So, we carefully ensure these attributes are lazy.
-    # We don't use django.utils.functional.lazy() for User, because that
+    # We don't use django_lettuce.utils.functional.lazy() for User, because that
     # requires knowing the class of the object we want to proxy, which could
     # break with custom auth backends.  LazyObject is a less complete but more
     # flexible solution that is a good enough wrapper for 'User'.

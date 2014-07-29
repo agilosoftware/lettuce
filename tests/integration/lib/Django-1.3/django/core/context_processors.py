@@ -85,7 +85,7 @@ def request(request):
 
 # PermWrapper and PermLookupDict proxy the permissions system into objects that
 # the template system can understand. They once lived here -- they have
-# been moved to django.contrib.auth.context_processors.
+# been moved to django_lettuce.contrib.auth.context_processors.
 
 from django.contrib.auth.context_processors import PermLookupDict as RealPermLookupDict
 from django.contrib.auth.context_processors import PermWrapper as RealPermWrapper

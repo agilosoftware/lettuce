@@ -199,10 +199,10 @@ class BaseCommand(object):
         stderr.
 
         """
-        # Switch to English, because django-admin.py creates database content
+        # Switch to English, because django_lettuce-admin.py creates database content
         # like permissions, and those shouldn't contain any translations.
         # But only do this if we can assume we have a working settings file,
-        # because django.utils.translation requires settings.
+        # because django_lettuce.utils.translation requires settings.
         if self.can_import_settings:
             try:
                 from django.utils import translation
@@ -363,7 +363,7 @@ def copy_helper(style, app_or_project, name, directory, other_name=''):
     layout template into the specified directory.
 
     """
-    # style -- A color style object (see django.core.management.color).
+    # style -- A color style object (see django_lettuce.core.management.color).
     # app_or_project -- The string 'app' or 'project'.
     # name -- The name of the application or project.
     # directory -- The directory to which the layout template should be copied.
@@ -386,8 +386,8 @@ def copy_helper(style, app_or_project, name, directory, other_name=''):
         raise CommandError(e)
 
     # Determine where the app or project templates are. Use
-    # django.__path__[0] because we don't know into which directory
-    # django has been installed.
+    # django_lettuce.__path__[0] because we don't know into which directory
+    # django_lettuce has been installed.
     template_dir = os.path.join(django.__path__[0], 'conf', '%s_template' % app_or_project)
 
     for d, subdirs, files in os.walk(template_dir):

@@ -1,6 +1,6 @@
 # Estonian translation for the Django Project.
 # Copyright (C) 2008, Django Project
-# This file is distributed under the same license as the django package.
+# This file is distributed under the same license as the django_lettuce package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"

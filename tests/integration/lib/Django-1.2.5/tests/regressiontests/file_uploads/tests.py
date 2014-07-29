@@ -230,7 +230,7 @@ class FileUploadTests(TestCase):
             'file_field': open(__file__),
         }
         # Maybe this is a little more complicated that it needs to be; but if
-        # the django.test.client.FakePayload.read() implementation changes then
+        # the django_lettuce.test.client.FakePayload.read() implementation changes then
         # this test would fail.  So we need to know exactly what kind of error
         # it raises when there is an attempt to read more than the available bytes:
         try:

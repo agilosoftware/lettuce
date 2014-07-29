@@ -2,7 +2,7 @@
 # pointed-to by the DJANGO_SETTINGS_MODULE environment variable.
 
 # This is defined here as a do-nothing function because we can't import
-# django.utils.translation -- that module depends on the settings.
+# django_lettuce.utils.translation -- that module depends on the settings.
 gettext_noop = lambda s: s
 
 ####################
@@ -159,7 +159,7 @@ DATABASES = {
 # Classes used to implement db routing behaviour
 DATABASE_ROUTERS = []
 
-# The email backend to use. For possible shortcuts see django.core.mail.
+# The email backend to use. For possible shortcuts see django_lettuce.core.mail.
 # The default is to use the SMTP backend.
 # Third-party backends can be specified by providing a Python path
 # to a module that defines an EmailBackend class.
@@ -183,12 +183,12 @@ INSTALLED_APPS = ()
 TEMPLATE_DIRS = ()
 
 # List of callables that know how to import templates from various sources.
-# See the comments in django/core/template/loader.py for interface
+# See the comments in django_lettuce/core/template/loader.py for interface
 # documentation.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#     'django_lettuce.template.loaders.eggs.Loader',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -200,7 +200,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
-#    'django.core.context_processors.request',
+#    'django_lettuce.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
 )
 
@@ -211,7 +211,7 @@ TEMPLATE_STRING_IF_INVALID = ''
 # the site managers.
 DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
-# Subject-line prefix for email messages send with django.core.mail.mail_admins
+# Subject-line prefix for email messages send with django_lettuce.core.mail.mail_admins
 # or ...mail_managers.  Make sure to include the trailing space.
 EMAIL_SUBJECT_PREFIX = '[Django] '
 
@@ -412,8 +412,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.http.ConditionalGetMiddleware',
-#     'django.middleware.gzip.GZipMiddleware',
+#     'django_lettuce.middleware.http.ConditionalGetMiddleware',
+#     'django_lettuce.middleware.gzip.GZipMiddleware',
 )
 
 ############
@@ -438,7 +438,7 @@ SESSION_FILE_PATH = None                                # Directory to store ses
 # New format
 CACHES = {
 }
-# The cache backend to use.  See the docstring in django.core.cache for the
+# The cache backend to use.  See the docstring in django_lettuce.core.cache for the
 # possible values.
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
 CACHE_MIDDLEWARE_SECONDS = 600
@@ -509,7 +509,7 @@ CSRF_COOKIE_DOMAIN = None
 MESSAGE_STORAGE = 'django.contrib.messages.storage.user_messages.LegacyFallbackStorage'
 
 # Default values of MESSAGE_LEVEL and MESSAGE_TAGS are defined within
-# django.contrib.messages to avoid imports in this settings file.
+# django_lettuce.contrib.messages to avoid imports in this settings file.
 
 ###########
 # LOGGING #
@@ -579,7 +579,7 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#    'django_lettuce.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # URL prefix for admin media -- CSS, JavaScript and images.

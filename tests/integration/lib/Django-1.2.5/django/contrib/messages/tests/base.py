@@ -389,7 +389,7 @@ class BaseTest(TestCase):
             29: 'custom',
         }
         # LEVEL_TAGS is a constant defined in the
-        # django.contrib.messages.storage.base module, so after changing
+        # django_lettuce.contrib.messages.storage.base module, so after changing
         # settings.MESSAGE_TAGS, we need to update that constant too.
         base.LEVEL_TAGS = utils.get_level_tags()
         try:

@@ -24,7 +24,7 @@
 #
 # The format used allows this script to be used in Emacs grep mode:
 #   M-x grep
-#   Run grep (like this): /path/to/my/virtualenv/python /path/to/django/src/extras/csrf_migration_helper.py --settings=mysettings /path/to/my/srcs
+#   Run grep (like this): /path/to/my/virtualenv/python /path/to/django_lettuce/src/extras/csrf_migration_helper.py --settings=mysettings /path/to/my/srcs
 
 
 # Limitations

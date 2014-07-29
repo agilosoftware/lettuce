@@ -50,7 +50,7 @@ class Command(BaseCommand):
             print "Development server is running at http://%s:%s/" % (addr, port)
             print "Quit the server with %s." % quit_command
 
-            # django.core.management.base forces the locale to en-us. We should
+            # django_lettuce.core.management.base forces the locale to en-us. We should
             # set it up correctly for the first request (particularly important
             # in the "--noreload" case).
             translation.activate(settings.LANGUAGE_CODE)

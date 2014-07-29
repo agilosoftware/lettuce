@@ -428,7 +428,7 @@ class BaseModelFormSet(BaseFormSet):
     def _construct_form(self, i, **kwargs):
         if self.is_bound and i < self.initial_form_count():
             # Import goes here instead of module-level because importing
-            # django.db has side effects.
+            # django_lettuce.db has side effects.
             from django.db import connections
             pk_key = "%s-%s" % (self.add_prefix(i), self.model._meta.pk.name)
             pk = self.data[pk_key]
@@ -456,7 +456,7 @@ class BaseModelFormSet(BaseFormSet):
                 qs = qs.order_by(self.model._meta.pk.name)
 
             # Removed queryset limiting here. As per discussion re: #13023
-            # on django-dev, max_num should not prevent existing
+            # on django_lettuce-dev, max_num should not prevent existing
             # related objects/inlines from being displayed.
             self._queryset = qs
         return self._queryset

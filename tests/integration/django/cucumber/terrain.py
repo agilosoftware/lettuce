@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from lettuce import before, after
-from lettuce.django.server import ThreadedServer
+from lettuce.django_lettuce.server import ThreadedServer
 from django.core.servers.basehttp import WSGIServer
 from nose.tools import assert_equals
 

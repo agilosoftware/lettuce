@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     # test urlconf for {% url %} template tag
     (r'^url_tag/', include('regressiontests.templates.urls')),
 
-    # django built-in views
+    # django_lettuce built-in views
     (r'^views/', include('regressiontests.views.urls')),
 
     # test urlconf for middleware tests

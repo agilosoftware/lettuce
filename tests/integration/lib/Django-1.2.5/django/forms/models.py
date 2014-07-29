@@ -465,7 +465,7 @@ class BaseModelFormSet(BaseFormSet):
                 qs = qs.order_by(self.model._meta.pk.name)
 
             # Removed queryset limiting here. As per discussion re: #13023
-            # on django-dev, max_num should not prevent existing
+            # on django_lettuce-dev, max_num should not prevent existing
             # related objects/inlines from being displayed.
             self._queryset = qs
         return self._queryset

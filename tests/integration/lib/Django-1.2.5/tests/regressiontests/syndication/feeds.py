@@ -102,7 +102,7 @@ class MyCustomAtom1Feed(feedgenerator.Atom1Feed):
     """
     def root_attributes(self):
         attrs = super(MyCustomAtom1Feed, self).root_attributes()
-        attrs[u'django'] = u'rocks'
+        attrs[u'django_lettuce'] = u'rocks'
         return attrs
 
     def add_root_elements(self, handler):

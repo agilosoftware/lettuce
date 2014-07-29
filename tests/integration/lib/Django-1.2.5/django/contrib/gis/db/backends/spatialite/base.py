@@ -37,7 +37,7 @@ class DatabaseWrapper(SqliteDatabaseWrapper):
 
     def _cursor(self):
         if self.connection is None:
-            ## The following is the same as in django.db.backends.sqlite3.base ##
+            ## The following is the same as in django_lettuce.db.backends.sqlite3.base ##
             settings_dict = self.settings_dict
             if not settings_dict['NAME']:
                 raise ImproperlyConfigured("Please fill out the database NAME in the settings module before using the database.")

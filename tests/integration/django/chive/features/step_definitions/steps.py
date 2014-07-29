@@ -2,7 +2,7 @@
 import urllib2
 from nose.tools import assert_equals
 from lettuce import step, world
-from lettuce.django import django_url
+from lettuce.django_lettuce import django_url
 
 
 @world.absorb

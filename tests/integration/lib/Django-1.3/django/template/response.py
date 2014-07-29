@@ -121,7 +121,7 @@ class SimpleTemplateResponse(HttpResponse):
 class TemplateResponse(SimpleTemplateResponse):
     def __init__(self, request, template, context=None, mimetype=None,
             status=None, content_type=None, current_app=None):
-        # self.request gets over-written by django.test.client.Client - and
+        # self.request gets over-written by django_lettuce.test.client.Client - and
         # unlike context_data and template_name the _request should not
         # be considered part of the public API.
         self._request = request

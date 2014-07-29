@@ -479,7 +479,7 @@ def get_host(request):
     return request.get_host()
 
 # It's neither necessary nor appropriate to use
-# django.utils.encoding.smart_unicode for parsing URLs and form inputs. Thus,
+# django_lettuce.utils.encoding.smart_unicode for parsing URLs and form inputs. Thus,
 # this slightly more restricted function.
 def str_to_unicode(s, encoding):
     """

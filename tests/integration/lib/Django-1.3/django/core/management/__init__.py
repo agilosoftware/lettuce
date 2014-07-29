@@ -121,7 +121,7 @@ def get_commands():
 
         if project_directory:
             # Remove the "startproject" command from self.commands, because
-            # that's a django-admin.py command, not a manage.py command.
+            # that's a django_lettuce-admin.py command, not a manage.py command.
             del _commands['startproject']
 
             # Override the startapp command so that it always uses the
@@ -367,8 +367,8 @@ class ManagementUtility(object):
                 parser.print_lax_help()
                 sys.stderr.write(self.main_help_text() + '\n')
                 sys.exit(1)
-        # Special-cases: We want 'django-admin.py --version' and
-        # 'django-admin.py --help' to work, for backwards compatibility.
+        # Special-cases: We want 'django_lettuce-admin.py --version' and
+        # 'django_lettuce-admin.py --help' to work, for backwards compatibility.
         elif self.argv[1:] == ['--version']:
             # LaxOptionParser already takes care of printing the version.
             pass

@@ -7,7 +7,7 @@ import yaml
 from django.core import mail
 
 from lettuce import step
-from lettuce.django.steps.mail import *
+from lettuce.django_lettuce.steps.mail import *
 
 
 STEP_PREFIX = r'(?:Given|And|Then|When) '

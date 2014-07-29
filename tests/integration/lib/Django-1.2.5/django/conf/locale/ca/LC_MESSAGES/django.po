@@ -1452,7 +1452,7 @@ msgstr "contingut"
 msgid "Metadata"
 msgstr "metadades"
 
-# Context problem... waitting for comments from django-i18n
+# Context problem... waitting for comments from django_lettuce-i18n
 #: contrib/comments/admin.py:39
 msgid "flagged"
 msgstr "marcat"
@@ -1608,7 +1608,7 @@ msgstr ""
 "\n"
 "http://%(domain)s%(url)s"
 
-# Context problem... waitting for comments from django-i18n
+# Context problem... waitting for comments from django_lettuce-i18n
 #: contrib/comments/models.py:170
 msgid "flag"
 msgstr "marcar"
@@ -1673,7 +1673,7 @@ msgstr "Marcar aquest comentari"
 msgid "Really flag this comment?"
 msgstr "Realment vol marcar aquest comentari?"
 
-# Context problem... waitting for comments from django-i18n
+# Context problem... waitting for comments from django_lettuce-i18n
 #: contrib/comments/templates/comments/flag.html:12
 msgid "Flag"
 msgstr "Marcar"

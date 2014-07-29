@@ -1,5 +1,5 @@
 # translation of djangojs.po to Italiano
-# Italian translation for the django-admin JS files
+# Italian translation for the django_lettuce-admin JS files
 # Copyright (C) 2006 the Lawrence Journal-World
 # This file is distributed under the same license as the Django package.
 msgid ""

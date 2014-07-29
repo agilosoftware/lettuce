@@ -163,7 +163,7 @@ class AdminScriptTestCase(unittest.TestCase):
 ##########################################################################
 # DJANGO ADMIN TESTS
 # This first series of test classes checks the environment processing
-# of the django-admin.py script
+# of the django_lettuce-admin.py script
 ##########################################################################
 
 

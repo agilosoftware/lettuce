@@ -76,7 +76,7 @@ SECRET_KEY = 'gw$-1dpq0k8xc+fqkywqr0$c3^fg)x!ym*^46=jmc@ql&z)pr8'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#     'django_lettuce.template.loaders.eggs.Loader',
 )
 
 ROOT_URLCONF = 'grocery.urls'

@@ -27,7 +27,7 @@ class PoFileTests(MessageCompilationTests):
 
     def test_bom_rejection(self):
         os.chdir(self.test_dir)
-        # We don't use the django.core.management intrastructure (call_command()
+        # We don't use the django_lettuce.core.management intrastructure (call_command()
         # et al) because CommandError's cause exit(1) there. We test the
         # underlying compile_messages function instead
         out = StringIO()

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import urllib2
 from lettuce import step, before, world
-from lettuce.django import django_url
+from lettuce.django_lettuce import django_url
 from nose.tools import assert_equals
 from django.conf import settings
 from lxml import html as lhtml

@@ -31,7 +31,7 @@ class ContentTypeManager(models.Manager):
         except KeyError:
             # Load or create the ContentType entry. The smart_unicode() is
             # needed around opts.verbose_name_raw because name_raw might be a
-            # django.utils.functional.__proxy__ object.
+            # django_lettuce.utils.functional.__proxy__ object.
             ct, created = self.get_or_create(
                 app_label = opts.app_label,
                 model = opts.object_name.lower(),

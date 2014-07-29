@@ -8,7 +8,7 @@ from django.utils.importlib import import_module
 
 # Imported for backwards compatibility, and for the sake
 # of a cleaner namespace. These symbols used to be in
-# django/core/mail.py before the introduction of email
+# django_lettuce/core/mail.py before the introduction of email
 # backends and the subsequent reorganization (See #10355)
 from django.core.mail.utils import CachedDnsName, DNS_NAME
 from django.core.mail.message import \

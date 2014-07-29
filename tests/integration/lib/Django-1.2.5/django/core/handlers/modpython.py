@@ -86,7 +86,7 @@ class ModPythonRequest(http.HttpRequest):
             try:
                 self._post, self._files = self.parse_file_upload(self.META, self._req)
             except:
-                # See django.core.handlers.wsgi.WSGIHandler for an explanation
+                # See django_lettuce.core.handlers.wsgi.WSGIHandler for an explanation
                 # of what's going on here.
                 self._post = http.QueryDict('')
                 self._files = datastructures.MultiValueDict()

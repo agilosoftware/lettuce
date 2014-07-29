@@ -157,7 +157,7 @@ class Runner(object):
             return
 
         # only load steps if we've located some features.
-        # this prevents stupid bugs when loading django modules
+        # this prevents stupid bugs when loading django_lettuce modules
         # that we don't even want to test.
         try:
             self.loader.find_and_load_step_definitions()

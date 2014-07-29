@@ -56,7 +56,7 @@ def _convert_to_django_msg(msg):
 def enable():
 
     from django.conf import settings
-    from lettuce.django import mail
+    from lettuce.django_lettuce import mail
 
     smtp_queue_server = None
 

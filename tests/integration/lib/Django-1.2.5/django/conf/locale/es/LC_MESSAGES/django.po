@@ -1,6 +1,6 @@
 # Spanish translation for the django project
 # Copyright (C) 2008, The Django Project
-# This file is distributed under the same license as the django package.
+# This file is distributed under the same license as the django_lettuce package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"

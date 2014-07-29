@@ -97,7 +97,7 @@ class BaseRunserverCommand(BaseCommand):
             "port": self.port,
             "quit_command": quit_command,
         })
-        # django.core.management.base forces the locale to en-us. We should
+        # django_lettuce.core.management.base forces the locale to en-us. We should
         # set it up correctly for the first request (particularly important
         # in the "--noreload" case).
         translation.activate(settings.LANGUAGE_CODE)

@@ -72,8 +72,8 @@ def get_resolver(urlconf):
 get_resolver = memoize(get_resolver, _resolver_cache, 1)
 
 def get_mod_func(callback):
-    # Converts 'django.views.news.stories.story_detail' to
-    # ['django.views.news.stories', 'story_detail']
+    # Converts 'django_lettuce.views.news.stories.story_detail' to
+    # ['django_lettuce.views.news.stories', 'story_detail']
     try:
         dot = callback.rindex('.')
     except ValueError:

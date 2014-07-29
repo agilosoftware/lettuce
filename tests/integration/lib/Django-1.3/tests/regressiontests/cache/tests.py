@@ -1247,7 +1247,7 @@ class CacheMiddlewareTest(unittest.TestCase):
 
         self.assertEqual(as_view_decorator.cache_timeout, 300) # Timeout value for 'default' cache, i.e. 300
         self.assertEqual(as_view_decorator.key_prefix, '')
-        self.assertEqual(as_view_decorator.cache_alias, 'default') # Value of DEFAULT_CACHE_ALIAS from django.core.cache
+        self.assertEqual(as_view_decorator.cache_alias, 'default') # Value of DEFAULT_CACHE_ALIAS from django_lettuce.core.cache
         self.assertEqual(as_view_decorator.cache_anonymous_only, False)
 
         # Next, test with custom values:

@@ -1,6 +1,6 @@
 # Django Korean Translation
 # Copyright (C) 2009
-# This file is distributed under the same license as the django package.
+# This file is distributed under the same license as the django_lettuce package.
 # Hyun Mi Ae, Joongi Kim (me@daybreaker.info), Sung-Jin Hong (serialx.net@gmail.com)
 #
 msgid ""

@@ -257,7 +257,7 @@ class BaseDatabaseWrapper(local):
 
 class BaseDatabaseFeatures(object):
     allows_group_by_pk = False
-    # True if django.db.backend.utils.typecast_timestamp is used on values
+    # True if django_lettuce.db.backend.utils.typecast_timestamp is used on values
     # returned from dates() calls.
     needs_datetime_string_cast = True
     empty_fetchmany_value = []

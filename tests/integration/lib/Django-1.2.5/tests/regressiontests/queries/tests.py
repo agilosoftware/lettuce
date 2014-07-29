@@ -1219,7 +1219,7 @@ class Queries6Tests(TestCase):
     ##
     ##    # We need to mess with the implementation internals a bit here to decrease the
     ##    # cache fill size so that we don't read all the results at once.
-    ##    from django.db.models import query
+    ##    from django_lettuce.db.models import query
     ##    query.ITER_CHUNK_SIZE = 2
     ##    qs = Tag.objects.all()
     ##

@@ -1,7 +1,7 @@
 # This module is DEPRECATED!
 #
-# You should no longer be using django.template_loader.
+# You should no longer be using django_lettuce.template_loader.
 #
-# Use django.template.loader instead.
+# Use django_lettuce.template.loader instead.
 
 from django.template.loader import *
