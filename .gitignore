@@ -6,6 +6,7 @@ docs/_build
 lettuce.egg-info/
 build/
 dist/
+.idea/
 .DS_Store
 *.swp
 tests/integration/django/dill/garden-db.sqlite

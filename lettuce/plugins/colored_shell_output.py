@@ -213,6 +213,8 @@ def print_end(total=None):
             total.features_passed_overall))
 
     else:
+        if type(total) is list:
+            total = total[0]
         word = total.features_ran > 1 and "features" or "feature"
 
         color = "\033[1;32m"
