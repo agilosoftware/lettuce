@@ -1218,7 +1218,7 @@ class Feature(object):
                 connection = sqlite3.connect('/tmp/scenarios.db')
                 try:
                     with connection:
-                        connection.execute("INSERT INTO scenarios(name) values (%s)" % scenario.name)
+                        connection.execute("INSERT INTO scenarios(name) values ('%s')" % scenario.name)
                     connection.close()
                     scenarios_ran.extend(scenario.run(ignore_case, failfast=failfast))
                 except sqlite3.IntegrityError:
