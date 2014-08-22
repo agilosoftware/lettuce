@@ -33,6 +33,7 @@ from lettuce.registry import call_hook
 from lettuce.exceptions import ReasonToFail
 from lettuce.exceptions import NoDefinitionFound
 from lettuce.exceptions import LettuceSyntaxError
+import sqlite3
 
 fs = FileSystem()
 
@@ -1214,7 +1215,14 @@ class Feature(object):
         call_hook('before_each', 'feature', self)
         try:
             for scenario in scenarios_to_run:
-                scenarios_ran.extend(scenario.run(ignore_case, failfast=failfast))
+                connection = sqlite3.connect('/tmp/scenarios.db')
+                try:
+                    with connection:
+                        connection.execute("INSERT INTO scenarios(name) values (%s)" % scenario.name)
+                    connection.close()
+                    scenarios_ran.extend(scenario.run(ignore_case, failfast=failfast))
+                except sqlite3.IntegrityError:
+                    connection.close()
         except:
             call_hook('after_each', 'feature', self)
             raise
