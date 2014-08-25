@@ -1221,7 +1221,8 @@ class Feature(object):
                         connection.execute("INSERT INTO scenarios(name) values (\"%s\")" % scenario.name)
                     connection.close()
                     scenarios_ran.extend(scenario.run(ignore_case, failfast=failfast))
-                except sqlite3.IntegrityError:
+                except sqlite3.IntegrityError, e:
+                    print "Failed inserting %s - %s" % (scenario.name, str(e))
                     connection.close()
         except:
             call_hook('after_each', 'feature', self)
