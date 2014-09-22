@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+import os
 
 import re
 import codecs
@@ -1215,7 +1215,8 @@ class Feature(object):
         call_hook('before_each', 'feature', self)
         try:
             for scenario in scenarios_to_run:
-                connection = sqlite3.connect('/tmp/scenarios.db')
+                scenarios_db = os.getenv('SCENARIOS_DB', '/tmp/scenarios.db')
+                connection = sqlite3.connect(scenarios_db)
                 try:
                     with connection:
                         connection.execute("INSERT INTO scenarios(name) values (\"%s\")" % scenario.name)
