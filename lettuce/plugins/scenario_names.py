@@ -22,10 +22,8 @@ from lettuce.terrain import before
 from lettuce.plugins.reporter import Reporter
 
 class NameReporter(Reporter):
-    def print_scenario_running(self, scenario):
-        self.wrt('%s ... ' % scenario.name)
-
     def print_scenario_ran(self, scenario):
+        self.wrt('%s ... ' % scenario.name)
         if scenario.passed:
             self.wrt("OK")
         elif scenario.failed:
@@ -38,7 +36,6 @@ class NameReporter(Reporter):
 
 reporter = NameReporter()
 
-before.each_scenario(reporter.print_scenario_running)
 after.each_scenario(reporter.print_scenario_ran)
 after.each_step(reporter.store_failed_step)
 after.all(reporter.print_end)
