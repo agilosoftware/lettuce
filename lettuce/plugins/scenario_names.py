@@ -38,7 +38,6 @@ class NameReporter(Reporter):
         if not step.display:
             return
 
-        self.wrt('\n')
         if step.failed:
             print_spaced = lambda x: self.wrt("%s%s\n" % (" " * step.indentation, x))
 
