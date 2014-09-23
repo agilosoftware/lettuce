@@ -34,10 +34,22 @@ class NameReporter(Reporter):
                 self.wrt("ERROR")
         self.wrt("\n")
 
+    def print_stacktrace(self, step):
+        if not step.display:
+            return
+
+        self.wrt('\n')
+        if step.failed:
+            print_spaced = lambda x: self.wrt("%s%s\n" % (" " * step.indentation, x))
+
+            for line in step.why.traceback.splitlines():
+                print_spaced(line)
+
 reporter = NameReporter()
 
 after.each_scenario(reporter.print_scenario_ran)
 after.each_step(reporter.store_failed_step)
+after.each_step(reporter.print_stacktrace)
 after.all(reporter.print_end)
 
 
